@@ -1,10 +1,10 @@
-###udacity neighboorhood project
+### udacity neighboorhood project
 
 ---
 
 create by create-react-app
 
-####how to use
+#### how to use
 
 1、clone the repo
 
@@ -12,7 +12,7 @@ create by create-react-app
 
 3、npm start
 
-####third part resoures
+#### third part resources
 - React
 - google-maps-react(https://cloud.google.com/maps-platform/)
 - Foursquare API(https://developer.foursquare.com/)
