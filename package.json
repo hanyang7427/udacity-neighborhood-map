@@ -1,0 +1,33 @@
+{
+  "name": "neighborhood_map_react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "css-tree": "^1.0.0-alpha.29",
+    "cssbeautify": "^0.3.1",
+    "esprima": "^4.0.1",
+    "google-maps-react": "^2.0.2",
+    "js-beautify": "^1.8.9",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-scripts": "2.1.5",
+    "react-sizeme": "^2.5.2",
+    "uglify-es": "^3.3.9",
+    "vm2": "^3.6.10"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
