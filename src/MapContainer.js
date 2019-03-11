@@ -3,6 +3,9 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import PlaceList from './PlaceList'
 import escapeRegExp from 'escape-string-regexp'
 import sizeMe from 'react-sizeme';
+import { _fetch } from './utils/timeoutFetch'
+// import LoadingContainer from './LoadingContainer'
+
 
 export class MapContainer extends Component {
   state = {
@@ -42,9 +45,10 @@ export class MapContainer extends Component {
         });
       }
     });
-    fetch(`https://api.foursquare.com/v2/venues/${typeof(props)==='string' ? props : props.id}?&client_id=ZMGY14BYASSW2NLKURSQWSMJVJPVQ14OFKRMFHM4CILWTMXC&client_secret=G41IDHCMF4Y5GGI5ZHT244JCGRKTQJQ2J0ASWIEGFKDTDUHU&v=20181030`)
+    _fetch(fetch(`https://api.foursquare.com/v2/venues/${typeof(props)==='string' ? props : props.id}?&client_id=ZMGY14BYASSW2NLKURSQWSMJVJPVQ14OFKRMFHM4CILWTMXC&client_secret=G41IDHCMF4Y5GGI5ZHT244JCGRKTQJQ2J0ASWIEGFKDTDUHU&v=20181030`),2000)
       .then(res => res.json())
       .then(data => {
+        console.log(data)
         this.setState({
             venueData: {
               name: data.response.venue.name,
@@ -52,7 +56,7 @@ export class MapContainer extends Component {
             }
           }
         )
-      }).catch(e => console.log(e));
+      }).catch(e => alert(e));
   };
 
 
@@ -97,5 +101,6 @@ export class MapContainer extends Component {
 }
 
 export default sizeMe()(GoogleApiWrapper({
-  apiKey: "AIzaSyAzFUJ-7-MeBZDrtY8vn2B7Tty46iTQN9c&"
+  apiKey: "AIzaSyAzFUJ-7-MeBZDrtY8vn2B7Tty46iTQN9c&",
+  // LoadingContainer: LoadingContainer
 })(MapContainer));
