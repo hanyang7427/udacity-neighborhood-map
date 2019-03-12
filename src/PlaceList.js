@@ -49,12 +49,15 @@ class PlaceList extends Component {
         </div>
 
         <div className={showingList ? 'placeListSearch' : 'hidden'}>
-          <input type="text" placeholder='Type to filter'
-                 value={query}
-                 aria-label="Filter text input box"
-                 onChange={event=>{
-                   this.handleQueryChange(event)
-                 }}
+          <input
+            role='input'
+            tabIndex='1'
+            type="text" placeholder='Type to filter'
+            value={query}
+            aria-label="Filter text input box"
+            onChange={event=>{
+              this.handleQueryChange(event)
+            }}
           />
         </div>
 
@@ -62,6 +65,9 @@ class PlaceList extends Component {
           <ul>
             {searchResult.map(place => (
                 <li
+                  tabIndex='1'
+                  role='navigation'
+                  aria-label={`navigation item`}
                   data-placeid={place.placeID}
                   onClick={e => {
                     onPlaceListItemClick(e.target.dataset.placeid);
