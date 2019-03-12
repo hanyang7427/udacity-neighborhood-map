@@ -7,6 +7,10 @@ import { _fetch } from './utils/timeoutFetch'
 // import LoadingContainer from './LoadingContainer'
 
 
+const LoadingContainer = (props) => (
+  <div>Fancy loading container!</div>
+)
+
 export class MapContainer extends Component {
   state = {
     showingInfoWindow: [],
@@ -102,5 +106,5 @@ export class MapContainer extends Component {
 
 export default sizeMe()(GoogleApiWrapper({
   apiKey: "AIzaSyAzFUJ-7-MeBZDrtY8vn2B7Tty46iTQN9c&",
-  // LoadingContainer: LoadingContainer
+  LoadingContainer: LoadingContainer
 })(MapContainer));

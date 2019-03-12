@@ -1,3 +1,4 @@
+// this file is temporary deprecated
 import React, { Component } from 'react'
 
 class LoadingContainer extends Component {
