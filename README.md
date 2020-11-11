@@ -8,9 +8,9 @@ create by create-react-app
 
 1、clone the repo
 
-2、npm install
+2、yarn install
 
-3、npm start
+3、yarn build
 
 #### third part resources
 - React
